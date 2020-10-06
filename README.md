@@ -11,3 +11,4 @@
 **Added - logs errors while sniping nitro codes.**
 
 ## Showcase:
+![Showcase](https://s8.gifyu.com/images/showcase.gif)
