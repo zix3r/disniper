@@ -1,5 +1,6 @@
 <h1 align="center">Disniper</h1>
-<h3 align="center">A program that snipes/instantly redeems discord nitro gifts</h3>
+<h2 align="center">A program that snipes/instantly redeems discord nitro gifts</h3>
+<h3 align="center">Usually snipes in about ~0.36ms</h3>
 <h4 align="center">⭐ Don't forget to leave a star! ⭐</h4>
 
 ## v1.0:
