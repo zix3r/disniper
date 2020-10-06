@@ -1,0 +1,14 @@
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\Disniper.exe.config
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\Disniper.exe
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\Disniper.pdb
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\Anarchy.dll
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\Colorful.Console.dll
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\Leaf.xNet.dll
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\Newtonsoft.Json.dll
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\websocket-sharp.dll
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\Leaf.xNet.xml
+C:\Games\etc\Projects\Disniper\Disniper\bin\Release\Newtonsoft.Json.xml
+C:\Games\etc\Projects\Disniper\Disniper\obj\Release\Disniper.csproj.CoreCompileInputs.cache
+C:\Games\etc\Projects\Disniper\Disniper\obj\Release\Disniper.csproj.CopyComplete
+C:\Games\etc\Projects\Disniper\Disniper\obj\Release\Disniper.exe
+C:\Games\etc\Projects\Disniper\Disniper\obj\Release\Disniper.pdb

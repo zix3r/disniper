@@ -1,0 +1,15 @@
+C:\Games\etc\Projects\Disbot\Disbot\obj\Debug\Disbot.csprojAssemblyReference.cache
+C:\Games\etc\Projects\Disbot\Disbot\obj\Debug\Disbot.csproj.CoreCompileInputs.cache
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\Disbot.exe.config
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\Disbot.exe
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\Disbot.pdb
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\Anarchy.dll
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\Colorful.Console.dll
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\Leaf.xNet.dll
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\Newtonsoft.Json.dll
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\websocket-sharp.dll
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\Leaf.xNet.xml
+C:\Games\etc\Projects\Disbot\Disbot\bin\Debug\Newtonsoft.Json.xml
+C:\Games\etc\Projects\Disbot\Disbot\obj\Debug\Disbot.csproj.CopyComplete
+C:\Games\etc\Projects\Disbot\Disbot\obj\Debug\Disbot.exe
+C:\Games\etc\Projects\Disbot\Disbot\obj\Debug\Disbot.pdb
