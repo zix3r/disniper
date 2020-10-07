@@ -8,6 +8,10 @@ using System.Web.ModelBinding;
 using Discord;
 using Discord.Gateway;
 using Console = Colorful.Console;
+using Colorful;
+using Microsoft.SqlServer.Server;
+using System.Linq;
+using WebSocketSharp;
 
 namespace MessageLogger
 {
@@ -59,14 +63,15 @@ namespace MessageLogger
 
                     Thread.Sleep(-1);
                 }
-            } else
+            }
+            else
             {
                 File.Create(path);
                 Console.WriteLine("Please enter the tokens in tokens.txt", Color.Cyan);
                 Console.WriteLine("Press enter to exit...");
                 Console.ReadLine();
             }
-        } 
+        }
         private static string redeemcode(string result, Stopwatch timer)
         {
             timer.Start();
@@ -107,23 +112,77 @@ namespace MessageLogger
             }
             return rstatus;
         }
-        private static void OnMessageReceived(DiscordSocketClient client, MessageEventArgs args)
+
+        private static void OnMessageReceived(DiscordSocketClient client, Discord.MessageEventArgs args)
         {
             Stopwatch timer = new Stopwatch();
             string message = args.Message.Content.ToString();
             if (message.Contains("https://discord.gift/") || message.Contains("https://discord.com/gifts/"))
             {
                 string status = redeemcode(message, timer);
+
                 string time = "0." + timer.ElapsedMilliseconds.ToString();
 
-                Console.Write(@"[", Color.Cyan);
-                Console.Write(time, Color.Yellow);
-                Console.Write(@"] ", Color.Cyan);
-                Console.Write(@"Link: ", Color.Orange);
-                Console.Write(message);
-                Console.Write(" [", Color.Cyan);
-                Console.Write(status, Color.Yellow);
-                Console.WriteLine("]", Color.Cyan);
+                string channel = "";
+                string server = "";
+                string user;
+                if (client.GetChannel(args.Message.Channel.Id).Type == ChannelType.DM || client.GetChannel(args.Message.Channel.Id).Type == ChannelType.Group)
+                {
+                    if (client.GetChannel(args.Message.Channel.Id).Type == ChannelType.DM)
+                    {
+                        user = args.Message.Author.User.ToString();
+                    } else
+                    {
+                        channel = client.GetChannel(args.Message.Channel.Id).ToGroup().Name;
+                        user = args.Message.Author.User.ToString();
+                    }
+                }
+                else
+                {
+                    channel = client.GetChannel(args.Message.Channel.Id).Name;
+                    server = client.GetGuild(args.Message.Guild.Id).Name;
+                    user = args.Message.Author.User.ToString();
+                }
+
+                StyleSheet styleSheet = new StyleSheet(Color.White);
+                styleSheet.AddStyle("[\\[\\]]", Color.Cyan);
+                styleSheet.AddStyle(time, Color.Yellow);
+                styleSheet.AddStyle("Link: ", Color.Orange);
+                styleSheet.AddStyle(message, Color.White);
+                styleSheet.AddStyle("Server: ", Color.Orange);
+                styleSheet.AddStyle("Channel: ", Color.Orange);
+                styleSheet.AddStyle("User: ", Color.Orange);
+                styleSheet.AddStyle("DM from user: ", Color.Orange);
+
+                switch (status)
+                {
+                    case "REDEEMED":
+                        styleSheet.AddStyle(status, Color.Lime);
+                        break;
+                    case "ALREADY REDEEMED":
+                        styleSheet.AddStyle(status, Color.Red);
+                        break;
+                    case "ERROR REDEEMING":
+                        styleSheet.AddStyle(status, Color.Yellow);
+                        break;
+                    case "UNKNOWN ERROR":
+                        styleSheet.AddStyle(status, Color.Yellow);
+                        break;
+                }
+
+                Console.WriteLineStyled("[" + time + "] " + "Link: " + message + " " + "[" + status + "]", styleSheet);
+
+                if (client.GetChannel(args.Message.Channel.Id).Type == ChannelType.DM || client.GetChannel(args.Message.Channel.Id).Type == ChannelType.Group)
+                {
+
+                        Console.WriteLineStyled("DM from user: " + user, styleSheet);
+                        Console.WriteLine();
+
+                } else
+                {
+                    Console.WriteLineStyled("Server: " + server + " Channel: " + channel + " User: " + user, styleSheet);
+                    Console.WriteLine();
+                }
             }
         }
     }

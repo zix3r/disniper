@@ -12,3 +12,4 @@ C:\Games\etc\Projects\Disniper\Disniper\obj\Release\Disniper.csproj.CoreCompileI
 C:\Games\etc\Projects\Disniper\Disniper\obj\Release\Disniper.csproj.CopyComplete
 C:\Games\etc\Projects\Disniper\Disniper\obj\Release\Disniper.exe
 C:\Games\etc\Projects\Disniper\Disniper\obj\Release\Disniper.pdb
+C:\Games\etc\Projects\Disniper\Disniper\obj\Release\Disniper.csprojAssemblyReference.cache
